@@ -20,9 +20,8 @@ WORKDIR /app
 # Copy the built jar file from the build stage
 COPY --from=build /app/target/*.jar app.jar
 
-# Expose the port the app runs on (e.g., 8080 for Spring Boot)
+# Expose the default Spring Boot port
 EXPOSE 8080
 
-# Run the Spring Boot application
-ENV PORT 8080
-CMD ["java", "-jar", "app.jar"]
+# Run the Spring Boot application, using Render's PORT environment variable
+CMD ["java", "-jar", "app.jar", "--server.port=${PORT}"]
