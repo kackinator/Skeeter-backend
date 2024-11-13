@@ -24,4 +24,4 @@ COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 
 # Run the Spring Boot application, using Render's PORT environment variable
-CMD ["java", "-jar", "app.jar", "--server.port=${PORT}"]
+CMD ["java", "-jar", "app.jar", "--server.port=8080"]
