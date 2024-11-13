@@ -8,11 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="skeetergame-backend" />
+        <module name="Skeeter-backend" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Skeeter-backend" options="-parameters" />
       <module name="skeetergame-backend" options="-parameters" />
     </option>
   </component>

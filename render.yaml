@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: springboot-backend
+    env: web
+    buildCommand: ./mvnw clean package  # Maven build command
+    startCommand: java -jar target/skeetergame-backend-0.0.1-SNAPSHOT.jar  # Command to run the JAR
+    plan: free
+    autoDeploy: true  # Enables automatic deployments on push
+    envVars:
+      - key: DATABASE_URL
+        sync: false
